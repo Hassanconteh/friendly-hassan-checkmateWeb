@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Auth System</title>
+<link rel="stylesheet" href="stylesLoginInfo.css">
+</head>
+
+<body class="page">
+
+<div class="container">
+
+<h1 class="title">BTech Solutions - Authentication System</h1>
+
+<!-- REGISTER -->
+<div id="registerSection" class="card">
+<h2>Register</h2>
+<input id="regUsername" class="input" placeholder="Username">
+<input id="regPassword" type="password" class="input" placeholder="Password">
+<button class="btn primary" onclick="registerUser()">Register</button>
+</div>
+
+<!-- LOGIN -->
+<div id="loginSection" class="card">
+<h2>Login</h2>
+<input id="loginUsername" class="input" placeholder="Username">
+<input id="loginPassword" type="password" class="input" placeholder="Password">
+<button class="btn primary" onclick="loginUser()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="card hidden">
+  <h2>Welcome <span id="userDisplay"></span></h2>
+
+  <div class="dashboard-nav" role="navigation" aria-label="Profile navigation">
+    <button id="navProfileView" class="btn nav-btn active" onclick="showDashboardSection('profileView')">View Profile</button>
+    <button id="navProfileEdit" class="btn nav-btn" onclick="showDashboardSection('profileEdit')">Edit Profile</button>
+  </div>
+
+  <div id="profileView" class="profile-section">
+    <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="profileDob"></span></p>
+    <p><strong>Bio:</strong> <span id="profileBio"></span></p>
+    <p><strong>Profession:</strong> <span id="profileProfession"></span></p>
+    <p><strong>Contact Address:</strong> <span id="profileAddress"></span></p>
+  </div>
+
+  <div id="profileEdit" class="profile-section hidden">
+    <input id="editUsername" class="input" placeholder="Username">
+    <input id="editDob" type="date" class="input" placeholder="Date of Birth">
+    <textarea id="editBio" class="input profile-textarea" placeholder="Bio"></textarea>
+    <input id="editProfession" class="input" placeholder="Profession">
+    <input id="editAddress" class="input" placeholder="Contact Address">
+    <button class="btn primary" onclick="saveProfile()">Save Profile</button>
+  </div>
+
+  <div class="dashboard-actions">
+    <button class="btn" onclick="logoutUser()">Logout</button>
+    <button class="btn" onclick="deleteAccount()">Delete Account</button>
+  </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+<p>&copy; 2026 Auth System. All rights reserved.</p>
+<p>Powered by Hassan Conteh from BTech</p>
+</footer>
+<script src="scriptLoginInfo.js"></script>
+</body>
+</html>
